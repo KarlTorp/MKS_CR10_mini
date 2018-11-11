@@ -6,8 +6,7 @@ Based on Marlin 1.1.9
 Compiled with Arduino 1.8.7  
 
 ### Drivers
-TMC2100 1/6 stealthChop for x, y & z  
-DVR8825 1/32 for e  
+TMC2208 1/16 default standalone stealthChop2 for x, y, z & e  
 
 ### Connections:
 FAN: Part cooling fan  
@@ -20,4 +19,5 @@ EXP1: Stock CR-10 mini GLCD (Connector must be flipped)
 Driver power: 12V from stock PSU  
 
 ### Mechanical
-CR-10 MKS Gen L Adapter Bracket: https://www.thingiverse.com/thing:3018807
+CR-10 MKS Gen L Adapter Bracket: https://www.thingiverse.com/thing:3018807  
+CR-10 BLTouch mount: https://www.thingiverse.com/thing:2493610  
