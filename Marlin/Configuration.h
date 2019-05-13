@@ -380,9 +380,9 @@
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
   //PID for Makerlab J-head
-  #define  DEFAULT_Kp 21.73
-  #define  DEFAULT_Ki 1.54
-  #define  DEFAULT_Kd 76.55
+  #define  DEFAULT_Kp 37.08
+  #define  DEFAULT_Ki 4.39
+  #define  DEFAULT_Kd 78.22
 
   // Ultimaker
   //#define DEFAULT_Kp 22.2
@@ -613,7 +613,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2[, E3[, E4]]]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.000,80.000,400.000,93.00}
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.000,80.000,400.000,420.00}
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -726,7 +726,7 @@
 /**
  * Z Servo Probe, such as an endstop switch on a rotating arm.
  */
-//#define Z_PROBE_SERVO_NR 0   // Defaults to SERVO 0 connector.
+//#define Z_PROBE_SERVO_NR 1   // Defaults to SERVO 0 connector.
 //#define Z_SERVO_ANGLES {70,0}  // Z Servo Deploy and Stow angles
 
 /**
@@ -783,19 +783,19 @@
  */
 #define X_PROBE_OFFSET_FROM_EXTRUDER -46  // X offset: -left  +right  [of the nozzle]
 #define Y_PROBE_OFFSET_FROM_EXTRUDER -5  // Y offset: -front +behind [the nozzle]
-#define Z_PROBE_OFFSET_FROM_EXTRUDER -4.1   // Z offset: -below +above  [the nozzle]
+#define Z_PROBE_OFFSET_FROM_EXTRUDER -3.3   // Z offset: -below +above  [the nozzle]
 
 // Certain types of probes need to stay away from edges
 #define MIN_PROBE_EDGE 0
 
 // X and Y axis travel speed (mm/m) between probes
-#define XY_PROBE_SPEED 8000
+#define XY_PROBE_SPEED (8000 * 2)
 
 // Feedrate (mm/m) for the first approach when double-probing (MULTIPLE_PROBING == 2)
-#define Z_PROBE_SPEED_FAST HOMING_FEEDRATE_Z
+#define Z_PROBE_SPEED_FAST (HOMING_FEEDRATE_Z * 4)
 
 // Feedrate (mm/m) for the "accurate" probe of each point
-#define Z_PROBE_SPEED_SLOW (Z_PROBE_SPEED_FAST / 2)
+#define Z_PROBE_SPEED_SLOW HOMING_FEEDRATE_Z
 
 // The number of probes to perform at each point.
 //   Set to 2 for a fast/slow probe, using the second probe result.
@@ -816,9 +816,9 @@
  * Example: `M851 Z-5` with a CLEARANCE of 4  =>  9mm from bed to nozzle.
  *     But: `M851 Z+1` with a CLEARANCE of 2  =>  2mm from bed to nozzle.
  */
-#define Z_CLEARANCE_DEPLOY_PROBE   15 // Z Clearance for Deploy/Stow
-#define Z_CLEARANCE_BETWEEN_PROBES 10 // Z Clearance between probe points
-#define Z_CLEARANCE_MULTI_PROBE     5 // Z Clearance between multiple probes
+#define Z_CLEARANCE_DEPLOY_PROBE   10 // Z Clearance for Deploy/Stow
+#define Z_CLEARANCE_BETWEEN_PROBES  5 // Z Clearance between probe points
+#define Z_CLEARANCE_MULTI_PROBE     4 // Z Clearance between multiple probes
 //#define Z_AFTER_PROBING           5 // Z position after probing is done
 
 #define Z_PROBE_LOW_POINT          -2 // Farthest distance below the trigger-point to go before stopping
@@ -860,7 +860,7 @@
 // @section extruder
 
 // For direct drive extruder v9 set to true, for geared extruder set to false.
-#define INVERT_E0_DIR true
+#define INVERT_E0_DIR false
 #define INVERT_E1_DIR false
 #define INVERT_E2_DIR false
 #define INVERT_E3_DIR false
